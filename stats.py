@@ -11,3 +11,14 @@ def count_characters(book:str):
         else:
             charcter_map[lower_char] = 1
     return charcter_map
+
+def get_sorted_list_of_dict(dict):
+    def sort_on(dict):
+        return dict["count"]
+    list_of_dict = []
+    
+    for key in dict:
+        list_of_dict.append({"char": key, "count": dict[key]})
+
+    list_of_dict.sort(reverse=True, key=sort_on)
+    return list_of_dict
